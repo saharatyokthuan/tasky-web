@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tasky — a tiny, fast task manager for your terminal. Add, list, and finish tasks without leaving the command line." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>Tasky — tasks from your terminal</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Tasky home">
+        <span class="brand-mark" aria-hidden="true">✅</span>
+        <span class="brand-name">tasky</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#install">Install</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
+              <span class="theme-icon" aria-hidden="true">🌙</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Zero dependencies · Pure standard library</p>
+          <h1>Stay on task, <span class="grad">stay in the terminal.</span></h1>
+          <p class="lede">
+            Tasky is a tiny command-line task manager. Add, list, and finish
+            tasks in seconds — no account, no cloud, just a JSON file you own.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#install">Get started</a>
+            <a class="btn btn-ghost" href="#features">See features</a>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-hidden="true">
+          <div class="window">
+            <div class="window-bar">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="window-title">~/projects — tasky</span>
+            </div>
+            <pre class="window-body"><code><span class="c-prompt">$</span> tasky add "write landing page"
+added: [ ]   1  write landing page
+<span class="c-prompt">$</span> tasky add "ship it"
+added: [ ]   2  ship it
+<span class="c-prompt">$</span> tasky done 1
+done: [x]   1  write landing page
+<span class="c-prompt">$</span> tasky list
+[ ]   2  ship it
+<span class="c-cursor">▌</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <header class="section-head">
+          <h2>Everything you need, nothing you don't</h2>
+          <p>Five subcommands. One file. That's the whole thing.</p>
+        </header>
+
+        <ul class="feature-grid">
+          <li class="card">
+            <span class="card-icon" aria-hidden="true">⚡</span>
+            <h3>Fast</h3>
+            <p>Starts instantly, no runtime or network calls. Pure standard library.</p>
+          </li>
+          <li class="card">
+            <span class="card-icon" aria-hidden="true">📦</span>
+            <h3>Portable</h3>
+            <p>One <code>pip install</code> and it runs anywhere Python does.</p>
+          </li>
+          <li class="card">
+            <span class="card-icon" aria-hidden="true">🔒</span>
+            <h3>Yours</h3>
+            <p>Tasks live in a plain JSON file under <code>$XDG_DATA_HOME</code>.</p>
+          </li>
+          <li class="card">
+            <span class="card-icon" aria-hidden="true">🧩</span>
+            <h3>Composable</h3>
+            <p>Pipe the store into <code>jq</code>, <code>grep</code>, or your own scripts.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="how">
+      <div class="container">
+        <header class="section-head">
+          <h2>Three steps to a clearer day</h2>
+        </header>
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <h3>Capture</h3>
+            <p>Dump a thought the moment it appears with <code>tasky add</code>.</p>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <h3>Focus</h3>
+            <p><code>tasky list</code> shows only what's left to do.</p>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <h3>Finish</h3>
+            <p>Knock it out with <code>tasky done</code> and move on.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="install">
+      <div class="container install-inner">
+        <div class="install-copy">
+          <h2>Install in one line</h2>
+          <p>Requires Python 3.10 or newer.</p>
+        </div>
+        <div class="code-block">
+          <code id="install-cmd">python -m pip install tasky</code>
+          <button class="copy-btn" type="button" data-copy="#install-cmd" aria-label="Copy install command">Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <h2>Fewer tabs. More done.</h2>
+        <a class="btn btn-primary" href="https://github.com/saharatyokthuan/tasky" rel="noopener">View on GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Tasky — built for learning.</p>
+      <nav aria-label="Footer">
+        <a href="#top">Back to top</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
